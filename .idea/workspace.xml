@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="" />
+    <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RateMyDocCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/delegates/LoginWindowDelegate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/LoginWindow.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,11 +35,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="115" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="RateMyDocGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.RateMyDocGUI" />
+      <module name="ratemydoc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RateMyDocGUI" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,7 +72,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585351075741</updated>
-      <workItem from="1585351077157" duration="793000" />
+      <workItem from="1585351077157" duration="1561000" />
+      <workItem from="1585352697815" duration="7000" />
+      <workItem from="1585356789576" duration="7488000" />
     </task>
     <servers />
   </component>
@@ -48,5 +86,29 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="238" key="#Project_Structure/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585351503056" />
+    <state width="1877" height="121" key="GridCell.Tab.0.bottom" timestamp="1585379700072">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="121" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585379700072" />
+    <state width="1877" height="121" key="GridCell.Tab.0.center" timestamp="1585379700072">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="121" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585379700072" />
+    <state width="1877" height="121" key="GridCell.Tab.0.left" timestamp="1585379700072">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="121" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585379700072" />
+    <state width="1877" height="121" key="GridCell.Tab.0.right" timestamp="1585379700072">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="121" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585379700072" />
+    <state x="839" y="374" key="UIDesigner.ListEditorDialog" timestamp="1585376608686">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="839" y="374" key="UIDesigner.ListEditorDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585376608686" />
+    <state x="655" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1585352698114">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="655" y="403" key="com.intellij.ide.util.TipDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585352698114" />
   </component>
 </project>
