@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/delegates/rmdCADelegate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/FieldLimit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/delegates/rmdCADelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/delegates/rmdCADelegate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/FieldLimit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/FieldLimit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/FieldLimit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/FieldLimit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/RateMyDocGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" afterDir="false" />
     </list>
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +77,7 @@
       <updated>1585351075741</updated>
       <workItem from="1585351077157" duration="1561000" />
       <workItem from="1585352697815" duration="7000" />
-      <workItem from="1585356789576" duration="17092000" />
+      <workItem from="1585356789576" duration="25139000" />
     </task>
     <servers />
   </component>
@@ -86,41 +89,49 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="238" key="#Project_Structure/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585351503056" />
-    <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser" timestamp="1585429546315">
+    <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser" timestamp="1585436653168">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429546315" />
-    <state width="1877" height="121" key="GridCell.Tab.0.bottom" timestamp="1585429959974">
+    <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585436653168" />
+    <state width="1877" height="121" key="GridCell.Tab.0.bottom" timestamp="1585438270290">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429959974" />
-    <state width="1877" height="121" key="GridCell.Tab.0.center" timestamp="1585429959973">
+    <state width="1877" height="121" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585438270290" />
+    <state width="1877" height="121" key="GridCell.Tab.0.center" timestamp="1585438270290">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429959973" />
-    <state width="1877" height="121" key="GridCell.Tab.0.left" timestamp="1585429959973">
+    <state width="1877" height="121" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585438270290" />
+    <state width="1877" height="121" key="GridCell.Tab.0.left" timestamp="1585438270287">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429959973" />
-    <state width="1877" height="121" key="GridCell.Tab.0.right" timestamp="1585429959973">
+    <state width="1877" height="121" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585438270287" />
+    <state width="1877" height="121" key="GridCell.Tab.0.right" timestamp="1585438270290">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="121" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429959973" />
-    <state x="839" y="374" key="UIDesigner.ListEditorDialog" timestamp="1585422282498">
+    <state width="1877" height="121" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585438270290" />
+    <state x="839" y="374" key="UIDesigner.ListEditorDialog" timestamp="1585430823627">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="839" y="374" key="UIDesigner.ListEditorDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585422282498" />
+    <state x="839" y="374" key="UIDesigner.ListEditorDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585430823627" />
     <state x="655" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1585352698114">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="655" y="403" key="com.intellij.ide.util.TipDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585352698114" />
-    <state x="2132" y="0" width="832" height="911" maximized="true" key="dock-window-1" timestamp="1585429202148">
-      <screen x="1920" y="0" width="1536" height="824" />
-    </state>
-    <state x="2132" y="0" width="832" height="911" maximized="true" key="dock-window-1/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585429202148" />
-    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1585428897416">
+    <state x="769" y="496" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585437098810">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585428897416" />
+    <state x="769" y="496" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585437098810" />
+    <state x="2132" y="0" width="832" height="911" maximized="true" key="dock-window-1" timestamp="1585433871050">
+      <screen x="1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="2132" y="0" width="832" height="911" maximized="true" key="dock-window-1/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585433871050" />
+    <state x="616" y="270" key="run.anything.popup" timestamp="1585436176881">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="616" y="270" key="run.anything.popup/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585436176881" />
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1585438176167">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585438176167" />
   </component>
 </project>
