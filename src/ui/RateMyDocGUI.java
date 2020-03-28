@@ -1,7 +1,10 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.text.Document;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RateMyDocGUI extends JFrame {
     public JPanel mainPanel;
@@ -13,27 +16,34 @@ public class RateMyDocGUI extends JFrame {
     private JLabel docEmailLabel;
     private JLabel leaveReviewLabel;
     private JComboBox aptTypeDropDown;
-    private JTextField textField1;
+    private JTextField doctorEmailAddress;
     private JLabel doctorNameLabel;
     private JLabel doctorLocationLabel;
     private JLabel doctorSpecLabel;
-    private JTextField doctorSpecialization;
+    private JTextField doctorSpecField;
     private JLabel doctorHospitalLabel;
     private JLabel starFilterLabel;
     private JComboBox starFilter;
     private JLabel resultsCountLabel;
     private JButton submitReviewButton;
     private JButton performQuery;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
-    private JTextArea textArea1;
+    private JTextField usernameField;
+    private JTextField passwordField;
+    private JTextField doctorNameField;
+    private JTextField doctorLocationField;
+    private JTextField doctorHospitalField;
+    private JTextArea reviewTextField;
     private JTextField adminUsername;
     private JTextField adminPasswordTextField;
     private JTextField reviewIDToDeleteTextField;
-    private JButton button1;
+    private JButton deleteReviewButton;
+    private JButton hideReviewButton;
+    private JLabel StarRatingLabel;
+    private JComboBox starRatingBox;
+    private JScrollPane responseTextPanel;
+    private JButton resetWriteButton;
+    private JButton resetQueryButton;
+    private JLabel writeReviewResponse;
 
     public RateMyDocGUI(String title) {
         super(title);
@@ -41,6 +51,32 @@ public class RateMyDocGUI extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
+
+        reviewTextField.setLineWrap(true);
+
+        resetQueryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                doctorNameField.setText("");
+                doctorLocationField.setText("");
+                doctorSpecField.setText("");
+                doctorHospitalField.setText("");
+                starFilter.setSelectedIndex(0);
+            }
+        });
+
+        resetWriteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usernameField.setText("");
+                passwordField.setText("");
+                aptTypeDropDown.setSelectedIndex(0);
+                doctorEmailAddress.setText("");
+                writeReviewResponse.setText("");
+                reviewTextField.setText("");
+                starRatingBox.setSelectedIndex(0);
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -48,5 +84,6 @@ public class RateMyDocGUI extends JFrame {
         frame.setMinimumSize(new Dimension(1000, 600));
         frame.setVisible(true);
     }
+
 
 }
