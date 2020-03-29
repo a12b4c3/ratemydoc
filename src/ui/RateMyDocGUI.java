@@ -8,7 +8,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.text.SimpleDateFormat;
+import java.util.Objects;
+import delegates.*;
+
 
 public class RateMyDocGUI extends JFrame {
     public JPanel mainPanel;
@@ -59,11 +61,12 @@ public class RateMyDocGUI extends JFrame {
     private boolean adminReviewIdHasValue = false;
     private boolean editReviewIdHasValue = false;
     private boolean aptDateHasValue = false;
+    private boolean docEmailHasValue = false;
+
+    private RMDDelegate delegate;
 
     public RateMyDocGUI(String title) {
         super(title);
-
-
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
@@ -229,6 +232,13 @@ public class RateMyDocGUI extends JFrame {
                 }
             }
         });
+
+        doctorEmailAddress.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -238,11 +248,51 @@ public class RateMyDocGUI extends JFrame {
     }
 
     private void submitReviewHandler() {
+        writeReviewResponse.setText("Resp: ");
+        String usr = usernameField.getText().trim();
+        String pwd = passwordField.getText().trim();
+        String atype = Objects.requireNonNull(aptTypeDropDown.getSelectedItem()).toString().trim();
+        String adate = aptDateField.getText().trim();
+        if (!Utils.isValidDate(adate)) {
+            System.out.println(adate);
+            aptDateField.setText("Invalid Date, use format YYYY-MM-DD");
+            aptDateHasValue = false;
+            return;
+        }
+        String demail = doctorEmailAddress.getText().trim();
+        if (!Utils.isValidEmail(demail)) {
+            doctorEmailAddress.setText("Invalid Email, please set Email.");
+        }
+        String rtext = reviewTextField.getText().trim();
+        int drating = starRatingBox.getSelectedIndex();
+        String ridedit = editReviewField.getText().trim();
+        WrittenReview review = new WrittenReview();
 
+        if (!editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, atype, adate, adate, demail, rtext}) && drating != 0) { // submit case
+        review.setReviewerUsername(usr);
+        review.setReviewerPassword(pwd);
+        review.setAppointmentType(atype);
+        review.setAppointmentDate(adate);
+        review.setDoctorEmailAddress(demail);
+        review.setReviewText(rtext);
+        review.setReviewRating(drating);
+        // todo submit to delegate
+
+        } else if (editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, rtext}) && drating != 0) { // edit case
+            review.setReviewerUsername(usr);
+            review.setReviewerPassword(pwd);
+            review.setReviewRating(drating);
+            // todo submit to delegate
+        }
     }
 
     private void submitQueryHandler() {
-
+        String docname = doctorNameField.getText();
+        String docloc = doctorLocationField.getText();
+        String docspec = doctorSpecField.getText();
+        String dochos = doctorHospitalField.getText();
+        int docrating = starFilter.getSelectedIndex();
+        // todo submit to delegate
     }
 
     private void submitEditHandler() {
