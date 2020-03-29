@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,6 +52,7 @@ public class RateMyDocGUI extends JFrame {
     private JTextField editReviewField;
     private JLabel aptDateLabel;
     private JTextField aptDateField;
+    private JLabel reviewCharCount;
 
     private boolean adminUsernameHasValue = false;
     private boolean adminPasswordHasValue = false;
@@ -197,6 +200,32 @@ public class RateMyDocGUI extends JFrame {
                     aptDateField.setText("YYYY-MM-DD");
                 } else {
                     aptDateHasValue = true;
+                }
+            }
+        });
+
+        reviewTextField.getDocument().addDocumentListener(new DocumentListener() {
+            int MAX_REVIEW_CHAR_LENGTH = 250;
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                update();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                update();
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                update();
+            }
+
+            public void update() {
+                int charCount = reviewTextField.getText().length();
+                reviewCharCount.setText("Character count: "+ charCount + " /" + MAX_REVIEW_CHAR_LENGTH);
+                if (charCount > MAX_REVIEW_CHAR_LENGTH) {
+                    reviewCharCount.setText("Too many characters! " + MAX_REVIEW_CHAR_LENGTH + " max!");
                 }
             }
         });
