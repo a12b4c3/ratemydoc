@@ -55,12 +55,11 @@ Lookup a review:
 	4. Doctor Specialization eg. Pediatrician, Oncologist
 	5. Only show doctors above (eg 3 stars) Show doctors who have received only 3* reviews and above.
 	
+	* When no results are found, will just return no results.
+	* Total number of results should be counted and returned.
+	
 	RESPONSE CODES:
 	000 - SUCCESS
-	300 - NO_DOC_NAME
-	301 - NO_DOC_LOC
-	302 - NO_DOC_SPEC
-	303 - NO_DOC_HOSP
 	
 
 
