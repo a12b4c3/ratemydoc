@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.Objects;
+
+import database.DatabaseConnectionHandler;
 import delegates.*;
 
 
@@ -242,6 +244,9 @@ public class RateMyDocGUI extends JFrame {
     }
 
     public static void main(String[] args) {
+        //start the database
+        new DatabaseConnectionHandler("ora_limen6", "a59418160");
+
         JFrame frame = new RateMyDocGUI("RateMyDoc CANADA");
         frame.setMinimumSize(new Dimension(1000, 600));
         frame.setVisible(true);
