@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="Finished implement ReviewModel, UserModel, DoctorModel, AppointmentModel&#10;need implement listener to use the database from the models">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/META-INF/ratemydoc.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/delegates/rmdCADelegate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/WrittenReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/WrittenReview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratemydoc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ratemydoc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/AppointmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/AppointmentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DoctorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DoctorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ReviewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReviewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,8 +117,16 @@
       <workItem from="1585356789576" duration="42360000" />
       <workItem from="1585549097656" duration="24413000" />
       <workItem from="1585694761037" duration="59000" />
-      <workItem from="1585694842448" duration="633000" />
+      <workItem from="1585694842448" duration="894000" />
     </task>
+    <task id="LOCAL-00001" summary="Finished implement ReviewModel, UserModel, DoctorModel, AppointmentModel&#10;need implement listener to use the database from the models">
+      <created>1585695505689</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585695505689</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,10 +161,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="428" y="187" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1585555730334" />
-    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1585695456338">
+    <state x="423" y="127" key="CommitChangelistDialog2" timestamp="1585695505339">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1585695456338" />
+    <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1585695505339" />
     <state width="1638" height="180" key="GridCell.Tab.0.bottom" timestamp="1585695456390">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -217,6 +197,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="839" y="374" width="242" height="411" key="UIDesigner.ListEditorDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585501913809" />
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585695512600">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="253" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1585695512600" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1585694842240">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
