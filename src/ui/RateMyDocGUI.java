@@ -15,6 +15,7 @@ import delegates.*;
 
 
 public class RateMyDocGUI extends JFrame {
+    private final delegates.RMDDelegate delegate;
     public JPanel mainPanel;
     private JLabel authorReview;
     private JLabel searchReview;
@@ -65,10 +66,9 @@ public class RateMyDocGUI extends JFrame {
     private boolean aptDateHasValue = false;
     private boolean docEmailHasValue = false;
 
-    private RMDDelegate delegate;
-
-    public RateMyDocGUI(String title) {
-        super(title);
+    public RateMyDocGUI(RMDDelegate delegate) {
+        super("RateMyDoc CANADA");
+        this.delegate = delegate;
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
         this.pack();
@@ -241,16 +241,15 @@ public class RateMyDocGUI extends JFrame {
 
             }
         });
+
+        submitReviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                submitReviewHandler();
+            }
+        });
     }
 
-    public static void main(String[] args) {
-        //start the database
-        new DatabaseConnectionHandler("ora_limen6", "a59418160");
-
-        JFrame frame = new RateMyDocGUI("RateMyDoc CANADA");
-        frame.setMinimumSize(new Dimension(1000, 600));
-        frame.setVisible(true);
-    }
 
     private void submitReviewHandler() {
         writeReviewResponse.setText("Resp: ");
@@ -267,6 +266,7 @@ public class RateMyDocGUI extends JFrame {
         String demail = doctorEmailAddress.getText().trim();
         if (!Utils.isValidEmail(demail)) {
             doctorEmailAddress.setText("Invalid Email, please set Email.");
+            return;
         }
         String rtext = reviewTextField.getText().trim();
         int drating = starRatingBox.getSelectedIndex();
@@ -281,7 +281,8 @@ public class RateMyDocGUI extends JFrame {
         review.setDoctorEmailAddress(demail);
         review.setReviewText(rtext);
         review.setReviewRating(drating);
-        // todo submit to delegate
+
+        delegate.insertReview(review);
 
         } else if (editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, rtext}) && drating != 0) { // edit case
             review.setReviewerUsername(usr);
@@ -301,6 +302,9 @@ public class RateMyDocGUI extends JFrame {
     }
 
     private void submitEditHandler() {
+        String editReviewID = editReviewField.getText();
+        String updatedReviewText = reviewTextField.getText();
+        int updatedStarRating = starRatingBox.getSelectedIndex();
 
     }
 

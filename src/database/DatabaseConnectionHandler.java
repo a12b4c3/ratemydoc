@@ -1,5 +1,7 @@
 package database;
 
+import ui.WrittenReview;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -23,20 +25,20 @@ public class DatabaseConnectionHandler {
 
     //call this in main, on opening the application
 
-    public DatabaseConnectionHandler(String  username, String password) {
+    public DatabaseConnectionHandler() {
         try {
 
             // Load the Oracle JDBC driver
             // Note that the path could change for new drivers
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            if (connection != null) {
-                connection.close();}
-
-            connection = DriverManager.getConnection(ORACLE_URL, username, password);
-            connection.setAutoCommit(false);
-            System.out.println("\nConnected to Oracle!");
+//            if (connection != null) {
+//                connection.close();}
+//
+//            connection = DriverManager.getConnection(ORACLE_URL, username, password);
+//            connection.setAutoCommit(false);
+//            System.out.println("\nConnected to Oracle!");
         } catch (SQLException e) {
-            System.out.println("??????");
+//            System.out.println("??????");
             System.out.println(EXCEPTION_TAG + " " + e.getMessage());
 
         }
@@ -54,33 +56,22 @@ public class DatabaseConnectionHandler {
         }
     }
 
+    public boolean login(String username, String password) {
+        try {
+            if (connection != null) {
+                connection.close();
+            }
 
-//
-//    private void rollbackConnection() {
-//        try  {
-//            connection.rollback();
-//        } catch (SQLException e) {
-//            System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-//        }
-//    }
+            connection = DriverManager.getConnection(ORACLE_URL, username, password);
+            connection.setAutoCommit(false);
 
-//    public void databaseSetup() {
-//        dropBranchTableIfExists();
-//
-//        try {
-//            Statement stmt = connection.createStatement();
-//            stmt.executeUpdate("CREATE TABLE branch (branch_id integer PRIMARY KEY, branch_name varchar2(20) not null, branch_addr varchar2(50), branch_city varchar2(20) not null, branch_phone integer)");
-//            stmt.close();
-//        } catch (SQLException e) {
-//            System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-//        }
-//
-//        BranchModel branch1 = new BranchModel("123 Charming Ave", "Vancouver", 1, "First Branch", 1234567);
-//        insertBranch(branch1);
-//
-//        BranchModel branch2 = new BranchModel("123 Coco Ave", "Vancouver", 2, "Second Branch", 1234568);
-//        insertBranch(branch2);
-//    }
+            System.out.println("\nConnected to Oracle!");
+            return true;
+        } catch (SQLException e) {
+            System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+            return false;
+        }
+    }
 
 
 }
