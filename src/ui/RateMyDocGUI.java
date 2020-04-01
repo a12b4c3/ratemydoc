@@ -1,5 +1,6 @@
 package ui;
 
+import javax.management.Query;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -288,16 +289,26 @@ public class RateMyDocGUI extends JFrame {
             review.setReviewerUsername(usr);
             review.setReviewerPassword(pwd);
             review.setReviewRating(drating);
-            // todo submit to delegate
+
+
+            delegate.editReview(review);
         }
     }
 
     private void submitQueryHandler() {
+        QueryReview query = new QueryReview();
         String docname = doctorNameField.getText();
         String docloc = doctorLocationField.getText();
         String docspec = doctorSpecField.getText();
         String dochos = doctorHospitalField.getText();
         int docrating = starFilter.getSelectedIndex();
+        query.setDoctorName(docname);
+        query.setDoctorLocation(docloc);
+        query.setDoctorSpecialization(docspec);
+        query.setDoctorHospital(dochos);
+        query.setOnlyDoctorsAboveRating(docrating);
+        
+        delegate.showReview(query);
         // todo submit to delegate
     }
 
