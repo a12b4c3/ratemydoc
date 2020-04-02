@@ -16,8 +16,8 @@ import java.awt.*;
 public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     private DatabaseConnectionHandler dbHandler = null;
     private LoginWindow loginWindow = null;
-    private ReviewModel reviewModel = new ReviewModel();
-    public RateMyDoctor() { dbHandler = new DatabaseConnectionHandler(); }
+    public RateMyDoctor() { dbHandler = new DatabaseConnectionHandler();
+    }
 
     private void start() {
         loginWindow = new LoginWindow();
@@ -56,13 +56,24 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         String demail = reviewObj.getDoctorEmailAddress();
         String reviewText = reviewObj.getReviewText();
         int overallRating = reviewObj.getReviewRating();
+        // Models need to be initialized after the driver starts, so can't be a private field
 
-        reviewModel.insertReview(aptDate,username, password, aptType, demail, reviewText, overallRating);
+        ReviewModel reviewModel = new ReviewModel();
+
+        reviewModel.insertReview(aptDate, username, password, aptType, demail, reviewText, overallRating);
     }
 
     @Override
     public void editReview(WrittenReview reviewObj) {
+        String username = reviewObj.getReviewerUsername();
+        String password = reviewObj.getReviewerPassword();
+        int rid = Integer.parseInt(reviewObj.getUpdateReviewId());
+        String updateText = reviewObj.getReviewText();
+        int overallRating = reviewObj.getReviewRating();
 
+        ReviewModel reviewModel = new ReviewModel();
+
+        reviewModel.updateReview(rid, username, password,updateText, overallRating);
     }
 
     @Override

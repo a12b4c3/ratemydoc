@@ -288,7 +288,9 @@ public class RateMyDocGUI extends JFrame {
         } else if (editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, rtext}) && drating != 0) { // edit case
             review.setReviewerUsername(usr);
             review.setReviewerPassword(pwd);
+            review.setReviewText(rtext);
             review.setReviewRating(drating);
+            review.setUpdateReviewId(ridedit);
 
 
             delegate.editReview(review);

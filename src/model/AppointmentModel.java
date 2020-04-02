@@ -7,14 +7,18 @@ import java.sql.Date;
 import java.util.GregorianCalendar;
 
 public class AppointmentModel {
-    private Connection databaseCon;
+    private Connection databaseCon = DatabaseConnectionHandler.getCon();;
 
-    public AppointmentModel(){this.databaseCon = DatabaseConnectionHandler.getCon();}
+    public AppointmentModel(){
+    }
 
     public void createAppointment(int aid, Date adate, String appointmentType){
+        System.out.println("In AppointmentModel, creating new appointment");
 
         //check whether the doctorExist in the database
         try{
+            System.out.println("appointment");
+            System.out.println(this.databaseCon);
             PreparedStatement ps_Appointment = this.databaseCon.prepareStatement("INSERT INTO Appointment VALUES(?, ?,  ?)");
             ps_Appointment.setInt(1, aid);
             ps_Appointment.setDate(2, adate);
@@ -26,8 +30,10 @@ public class AppointmentModel {
             // Just in case I am using the auto increment stuff
             // PreparedStatement reviewContent = databaseCon.prepareStatement("INSERT INTO ReviewContent () VALUES(?, ?,  ?, ?, ?)");
         } catch (SQLException e) {
+            System.out.println("debug comment, in AppointmentModel, creatAppointment");
             e.printStackTrace();
         }
+        System.out.println("new appointment created");
     }
 
 }
