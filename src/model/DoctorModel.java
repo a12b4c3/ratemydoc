@@ -4,11 +4,13 @@ import java.sql.*;
 
 
 public class DoctorModel {
-    private Connection databaseCon;
+    private Connection databaseCon = DatabaseConnectionHandler.getCon();;
 
-    public DoctorModel(){this.databaseCon = DatabaseConnectionHandler.getCon();}
+    public DoctorModel(){}
 
     public void createDoctor(String demail, String name){
+
+        System.out.println("Creating a new doctor here.");
 
         //check whether the doctorExist in the database
         try{
@@ -24,18 +26,25 @@ public class DoctorModel {
             this.databaseCon.commit();
             ps.close();
 
+            if(isDoctorExist(demail)) {
+                System.out.println("New doctor created in system.");
+            }
+
+
         } catch (SQLException e) {
+            System.out.println("creation failed");
             e.printStackTrace();
         }
     }
 
     public boolean isDoctorExist(String doctorEmail) {
         try {
-            String check_email = " SELECT * FROM doctor WHERE demail = " + doctorEmail;
-            PreparedStatement ps = this.databaseCon.prepareStatement(check_email);
-            ResultSet rs = ps.executeQuery();
-            //No such doctor exist
-            // Insert one doctor
+
+            PreparedStatement stmt = this.databaseCon.prepareStatement("select *  from doctor where demail =?");
+            stmt.setString(1, doctorEmail);
+            ResultSet rs = stmt.executeQuery();
+
+            System.out.println("is doctor exist here???? ");
             return rs.next();
         } catch (SQLException e) {
             e.printStackTrace();
