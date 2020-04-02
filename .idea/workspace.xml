@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,17 +24,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@dbhost.students.cs.ubc.ca" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@dbhost.students.cs.ubc.ca" type="feb32156:DbDataSourceImpl" />
-        <item name="ORA_GKTERATO: schema" type="3abd1b6a:OraImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@dbhost.students.cs.ubc.ca" type="feb32156:DbDataSourceImpl" />
-        <item name="ORA_GKTERATO: schema" type="3abd1b6a:OraImplModel$Schema" />
-        <item name="STUDENT: table" type="942f455b:OraImplModel$Table" />
       </path>
     </expand>
     <select />
