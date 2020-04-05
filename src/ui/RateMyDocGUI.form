@@ -87,14 +87,14 @@
           <text value="Doctor Name"/>
         </properties>
       </component>
-      <component id="c1c9b" class="javax.swing.JLabel" binding="doctorLocationLabel">
+      <component id="c1c9b" class="javax.swing.JLabel" binding="doctorIdentifierLabel">
         <constraints>
           <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="48" height="16"/>
           </grid>
         </constraints>
         <properties>
-          <text value="Doctor Location"/>
+          <text value="Identify doctor by...."/>
         </properties>
       </component>
       <component id="fa634" class="javax.swing.JLabel" binding="doctorSpecLabel">
@@ -164,14 +164,6 @@
       <component id="b04d6" class="javax.swing.JTextField" binding="doctorNameField">
         <constraints>
           <grid row="1" column="7" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="3a57d" class="javax.swing.JTextField" binding="doctorLocationField">
-        <constraints>
-          <grid row="2" column="7" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -267,14 +259,6 @@
           <text value="Submit/Edit Review"/>
         </properties>
       </component>
-      <scrollpane id="6279a" binding="responseTextPanel">
-        <constraints>
-          <grid row="7" column="6" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </scrollpane>
       <component id="38702" class="javax.swing.JButton" binding="hideReviewButton">
         <constraints>
           <grid row="9" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -399,6 +383,30 @@
         </constraints>
         <properties>
           <text value="Character count: 0/250"/>
+        </properties>
+      </component>
+      <scrollpane id="6257b">
+        <constraints>
+          <grid row="7" column="6" row-span="1" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="c7ccf" class="javax.swing.JTextArea" binding="responseTextArea">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="f0053" class="javax.swing.JComboBox" binding="docIdentifierBox">
+        <constraints>
+          <grid row="2" column="7" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="Doctor Name"/>
+            <item value="Doctor E-mail"/>
+          </model>
         </properties>
       </component>
     </children>

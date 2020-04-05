@@ -3,6 +3,7 @@ package ui;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.time.format.DateTimeFormatter;
@@ -41,5 +42,23 @@ public class Utils {
             }
         }
         return true;
+    }
+
+    public static String concatLLString(LinkedList<String> lls) {
+        StringBuilder sb = new StringBuilder("");
+        while (lls.size() != 0) {
+            String temp = lls.pop();
+            sb.append(temp);
+            sb.append("\n");
+            sb.append("------------------\n");
+        }
+        return sb.toString();
+    }
+
+    public static String getCountText(LinkedList<String> lls) {
+        StringBuilder sb = new StringBuilder("Returned ");
+        String count = (Integer.toString(lls.size())) + " results";
+        sb.append(count);
+        return sb.toString();
     }
 }
