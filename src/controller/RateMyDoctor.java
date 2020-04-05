@@ -99,6 +99,21 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         // todo call delete function.
     }
 
+    @Override
+    public int countReviews() {
+        DoctorQuerier querier = new DoctorQuerier();
+
+        return querier.countQuery();
+    }
+
+    @Override
+    public LinkedList<String> showMostReviewed(QueryReview reviewObj) {
+        int docIdentifier = reviewObj.getDocIdentifier();
+        DoctorQuerier querier = new DoctorQuerier();
+
+        return querier.divisionQuery(docIdentifier);
+    }
+
     public static void main(String[] args) {
         RateMyDoctor rmd = new RateMyDoctor();
         rmd.start();

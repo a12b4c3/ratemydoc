@@ -9,8 +9,10 @@ public class DoctorQuerier {
 
     public DoctorQuerier() {}
 
+    // For general query using inputs on right-hand side of GUI
     public LinkedList<String> runQuery(String name, String spec, String hospital, int ratingLim, int option) {
         LinkedList<String> result = new LinkedList<>();
+
         try {
             boolean emptySpec = true;
             boolean emptyHosp = true;
@@ -141,6 +143,78 @@ public class DoctorQuerier {
             }
             ResultSet queryResult = finalQuery.executeQuery();
 
+            result = this.processResultSet(queryResult);
+
+            queryResult.close();
+            finalQuery.close();
+        } catch (SQLException e) {
+            System.out.println("debug exception, run query");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    // Query the total number of reviews stored in database
+    public int countQuery() {
+        int count = 0;
+
+        try{
+            PreparedStatement countReviewQuery = this.databaseCon.prepareStatement("SELECT COUNT(*) FROM ReviewContent");
+            ResultSet queryResult = countReviewQuery.executeQuery();
+            queryResult.next();
+            count = queryResult.getInt(1);
+
+            queryResult.close();
+            countReviewQuery.close();
+        } catch (SQLException e) {
+            System.out.println("debug exception, count query");
+            e.printStackTrace();
+        }
+
+        return count;
+    }
+
+    // Query the doctors who were reviewed by all users
+    public LinkedList<String> divisionQuery(int option) {
+        LinkedList<String> result = new LinkedList<>();
+
+        try{
+            PreparedStatement countReviewQuery = this.databaseCon.prepareStatement("CREATE OR REPLACE VIEW DivisionView(demail, name) AS " +
+                    "SELECT D.demail, D.name FROM Doctor D WHERE NOT EXISTS " +
+                    "((SELECT U.username FROM ALL_USER U) MINUS (SELECT R.username FROM ReviewContent R WHERE R.demail = D.demail))");
+            countReviewQuery.executeUpdate();
+            this.databaseCon.commit();
+            countReviewQuery.close();
+
+            String finalQueryInput = "";
+            if (option == 0) {
+                finalQueryInput = "SELECT rid, name, type, rating, user_comment " +
+                        "FROM DivisionView natural join ReviewContent natural join ReviewDetails natural join Appointment ORDER BY name";
+            }
+            else {
+                finalQueryInput = "SELECT rid, demail, type, rating, user_comment " +
+                        "FROM DivisionView natural join ReviewContent natural join ReviewDetails natural join Appointment ORDER BY demail";
+            }
+            PreparedStatement finalQuery = this.databaseCon.prepareStatement(finalQueryInput);
+            ResultSet queryResult = finalQuery.executeQuery();
+
+            result = this.processResultSet(queryResult);
+
+            queryResult.close();
+            finalQuery.close();
+        } catch (SQLException e) {
+            System.out.println("debug exception, division query");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    private LinkedList<String> processResultSet(ResultSet queryResult) {
+        LinkedList<String> result = new LinkedList<>();
+
+        try {
             while(queryResult.next()) {
                 String rid = queryResult.getString(1);
                 String doctor = queryResult.getString(2);
@@ -150,14 +224,11 @@ public class DoctorQuerier {
                 String entry = "rid: " + rid + "\nDoctor: " + doctor + "\nAppointment Type: " + aptType + "\nOverall Rating: " + rating + "\nReview: '" + comment + "'";
                 result.add(entry);
             }
-
-            queryResult.close();
-            finalQuery.close();
-
         } catch (SQLException e) {
-            System.out.println("debug exception, run query");
+            System.out.println("debug exception, division query");
             e.printStackTrace();
         }
+
         return result;
     }
 }

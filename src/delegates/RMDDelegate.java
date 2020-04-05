@@ -12,4 +12,6 @@ public interface RMDDelegate {
     public void editReview (WrittenReview reviewObj);
     public LinkedList<String> showReview(QueryReview queryObj);
     public void deleteReview(WrittenReview reviewObj);
+    public int countReviews();
+    public LinkedList<String> showMostReviewed(QueryReview queryObj);
 }

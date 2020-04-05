@@ -48,7 +48,7 @@ public class RateMyDocGUI extends JFrame {
     private JTextField adminPasswordTextField;
     private JTextField reviewIDToDeleteTextField;
     private JButton deleteReviewButton;
-    private JButton totalCountButton;
+    private JButton monitorButton;
     private JLabel StarRatingLabel;
     private JComboBox starRatingBox;
     private JButton resetWriteButton;
@@ -60,6 +60,8 @@ public class RateMyDocGUI extends JFrame {
     private JLabel reviewCharCount;
     private JTextArea responseTextArea;
     private JComboBox docIdentifierBox;
+    private JButton divisionQuery;
+    private JButton countQuery;
 
     private boolean adminUsernameHasValue = false;
     private boolean adminPasswordHasValue = false;
@@ -260,6 +262,34 @@ public class RateMyDocGUI extends JFrame {
                 submitQueryHandler();
             }
         });
+
+        deleteReviewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                deleteReviewHandler();
+            }
+        });
+
+        monitorButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                // TODO
+            }
+        });
+
+        countQuery.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                countQueryHandler();
+            }
+        });
+
+        divisionQuery.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                divisionQueryHandler();
+            }
+        });
     }
 
 
@@ -337,6 +367,19 @@ public class RateMyDocGUI extends JFrame {
         delegate.deleteReview(wr);
     }
 
+    private void countQueryHandler() {
+        responseTextArea.setText("Total number of reviews across all doctors: " + delegate.countReviews());
+    }
+
+    private void divisionQueryHandler() {
+        QueryReview query = new QueryReview();
+        int docidentifier = docIdentifierBox.getSelectedIndex();
+        query.setDocIdentifier(docidentifier);
+
+        LinkedList<String> results = delegate.showMostReviewed(query);
+        resultsCountLabel.setText(Utils.getCountText(results));
+        responseTextArea.setText(Utils.concatLLString(results));
+    }
 
     public static void main(String[] args) {
         Frame frame = new RateMyDocGUI(null);

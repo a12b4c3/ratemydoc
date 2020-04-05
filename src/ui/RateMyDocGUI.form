@@ -259,7 +259,7 @@
           <text value="Submit/Edit Review"/>
         </properties>
       </component>
-      <component id="38702" class="javax.swing.JButton" binding="totalCountButton">
+      <component id="38702" class="javax.swing.JButton" binding="monitorButton">
         <constraints>
           <grid row="9" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -401,7 +401,7 @@
           </model>
         </properties>
       </component>
-      <component id="3000f" class="javax.swing.JButton">
+      <component id="3000f" class="javax.swing.JButton" binding="countQuery">
         <constraints>
           <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -411,7 +411,7 @@
           <text value="Total Count Reviews"/>
         </properties>
       </component>
-      <component id="1a86b" class="javax.swing.JButton">
+      <component id="1a86b" class="javax.swing.JButton" binding="divisionQuery">
         <constraints>
           <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
