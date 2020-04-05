@@ -313,6 +313,7 @@ public class RateMyDocGUI extends JFrame {
         String rtext = reviewTextField.getText().trim();
         int drating = starRatingBox.getSelectedIndex();
         String ridedit = editReviewField.getText().trim();
+
         WrittenReview review = new WrittenReview();
 
         if (!editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, atype, adate, adate, demail, rtext}) && drating != 0) { // submit case
@@ -331,7 +332,8 @@ public class RateMyDocGUI extends JFrame {
             review.setReviewerPassword(pwd);
             review.setReviewText(rtext);
             review.setReviewRating(drating);
-            review.setUpdateReviewId(ridedit);
+            System.out.println("the rid to edit is: " + ridedit);
+            review.setUpdateReviewId(Integer.parseInt(ridedit));
 
 
             delegate.editReview(review);
@@ -359,7 +361,7 @@ public class RateMyDocGUI extends JFrame {
     private void deleteReviewHandler(){
         String adminuser = adminUsernameTextField.getText();
         String adminpass = adminPasswordTextField.getText();
-        String idToDelete = reviewIDToDeleteTextField.getText();
+        int idToDelete = Integer.parseInt(reviewIDToDeleteTextField.getText());
         WrittenReview wr = new WrittenReview();
         wr.setReviewerUsername(adminuser);
         wr.setReviewerPassword(adminpass);

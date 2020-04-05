@@ -127,4 +127,37 @@ public class ReviewModel {
 
     }
 
+    public void deleteReview(String adminusername, String adminpassword, int ridtodelete) {
+        AdminModel am = new AdminModel();
+        String reviewerUsername = null;
+        String doctorEmail = null;
+        int aid = -1;
+        if (am.verifyUserIsAdmin(adminusername, adminpassword)) {
+            try {
+                PreparedStatement ps = this.databaseCon.prepareStatement("SELECT username, aid, demail FROM REVIEWDETAILS where RID=?");
+                ps.setInt(1,ridtodelete);
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    reviewerUsername = rs.getString("username");
+                    doctorEmail = rs.getString("demail");
+                    aid = rs.getInt("aid");
+                }
+
+                PreparedStatement ps2 = this.databaseCon.prepareStatement("DELETE from REVIEWCONTENT where username = ? and aid = ? and demail = ?");
+                ps2.setString(1, reviewerUsername);
+                ps2.setInt(2, aid);
+                ps2.setString(3, doctorEmail);
+                ps2.executeUpdate();
+                this.databaseCon.commit();
+                ps.close();
+
+            } catch (SQLException e) {
+                System.out.println("Could not delete rid");
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
 }

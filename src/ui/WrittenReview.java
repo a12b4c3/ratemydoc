@@ -7,7 +7,7 @@ public class WrittenReview {
     private String appointmentDate;
     private String doctorEmailAddress;
     private String reviewText;
-    private String updateReviewId;
+    private int updateReviewId;
 
     private int reviewRating;
 
@@ -71,11 +71,11 @@ public class WrittenReview {
         this.reviewText = reviewText;
     }
 
-    public String getUpdateReviewId() {
+    public int getUpdateReviewId() {
         return updateReviewId;
     }
 
-    public void setUpdateReviewId(String updateReviewId) {
+    public void setUpdateReviewId(int updateReviewId) {
         this.updateReviewId = updateReviewId;
     }
 }

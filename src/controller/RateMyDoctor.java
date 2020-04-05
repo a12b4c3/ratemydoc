@@ -3,13 +3,16 @@ package controller;
 import database.DatabaseConnectionHandler;
 import delegates.LoginWindowDelegate;
 import delegates.RMDDelegate;
+import model.AdminModel;
 import model.DoctorQuerier;
 import model.ReviewModel;
+import oracle.jdbc.driver.DBConversion;
 import ui.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.LinkedList;
 
 
@@ -67,7 +70,7 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     public void editReview(WrittenReview reviewObj) {
         String username = reviewObj.getReviewerUsername();
         String password = reviewObj.getReviewerPassword();
-        int rid = Integer.parseInt(reviewObj.getUpdateReviewId());
+        int rid = reviewObj.getUpdateReviewId();
         String updateText = reviewObj.getReviewText();
         int overallRating = reviewObj.getReviewRating();
 
@@ -91,10 +94,13 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
 
     @Override
     public void deleteReview(WrittenReview queryObj) {
+
         String adminusername = queryObj.getReviewerUsername();
         String adminpassword = queryObj.getReviewerPassword();
-        String idToDelete = queryObj.getUpdateReviewId();
-        
+        int idToDelete = queryObj.getUpdateReviewId();
+
+        ReviewModel rm = new ReviewModel();
+        rm.deleteReview(adminusername, adminpassword, idToDelete);
 
         // todo call delete function.
     }
