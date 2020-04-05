@@ -10,7 +10,7 @@ public class ReviewModel {
 
     public ReviewModel(){}
 
-    public void insertReview(String adate, String userName, String user_password,
+    public int insertReview(String adate, String userName, String user_password,
                              String appointmentType , String doctorEmail,
                              String comment, int rating){
         int num_likes = 0;
@@ -68,12 +68,13 @@ public class ReviewModel {
             this.databaseCon.commit();
             ps_Detail.close();
 
+
         } catch (SQLException e) {
             System.out.println("debug exception, insert review");
             e.printStackTrace();
         }
 
-
+        return rid;
     }
 
     // In order to make the update action realistic we need to print out rid after user made a comment

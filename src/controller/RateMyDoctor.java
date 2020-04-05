@@ -48,7 +48,7 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     }
 
     @Override
-    public void insertReview(WrittenReview reviewObj) {
+    public int insertReview(WrittenReview reviewObj) {
         String username = reviewObj.getReviewerUsername();
         String password = reviewObj.getReviewerPassword();
         String aptType = reviewObj.getAppointmentType();
@@ -60,7 +60,7 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
 
         ReviewModel reviewModel = new ReviewModel();
 
-        reviewModel.insertReview(aptDate, username, password, aptType, demail, reviewText, overallRating);
+        return reviewModel.insertReview(aptDate, username, password, aptType, demail, reviewText, overallRating);
     }
 
     @Override
@@ -76,11 +76,6 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         reviewModel.updateReview(rid, username, password,updateText, overallRating);
     }
 
-    /*
-    string linked list structure:
-    "rid: 123456\nName: Angus Reid\nAppointment Type: Checkup\n"
-
-     */
     @Override
     public LinkedList<String> showReview(QueryReview reviewObj) {
         String doctorName = reviewObj.getDoctorName();
