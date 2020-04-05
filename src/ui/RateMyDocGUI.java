@@ -321,32 +321,36 @@ public class RateMyDocGUI extends JFrame {
         query.setDoctorSpecialization(docspec);
         query.setDoctorHospital(dochos);
         query.setOnlyDoctorsAboveRating(docrating);
-        
-//        LinkedList<String> results = delegate.showReview(query);
+
+        // todo update counter
+        responseTextArea.setText(Utils.concatLLString(delegate.showReview(query)));
 
 
-        String t1 = "rid: 123456\nDoctor: Angus Reid, Richmond, Sacred Heart Hospital\nAppointment Type: Checkup\nOverall Rating: 3/5\nReview: 'angus was great!'";
-        String t2 = "rid: 213452\nDoctor: Alfred Wong, Burnaby, Burnaby General Hospital\nAppointment Type: Followup\nOverall Rating: 5/5\nReview: 'Alfred was super helpful!'";
-        String t3 = "rid: 321039\nDoctor: Janel Kopp, Delta, Delta Hospital\nAppointment Type: Eye Exam\nOverall Rating: 4/5\nReview: 'Could be a bit more personable but knowledgeable!'";
-        String t4 = "rid: 230129\nDoctor: Jesus Christ, Vancouver, University of British Columbia Hospital\nAppointment Type: Mammogram\nOverall Rating: 1/5\nReview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit sed vulputate mi sit. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Sagittis eu volutpat odio facilisis mauris sit amet. Faucibus nisl tincidunt eget nullam non nisi. Ipsum dolor sit amet consectetur. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Pretium viverra suspendisse potenti nullam ac tortor. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Egestas diam in arcu cursus euismod quis viverra nibh cras. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Sed turpis tincidunt id aliquet. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Leo a diam sollicitudin tempor. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Dignissim diam quis enim lobortis scelerisque fermentum. Viverra suspendisse potenti nullam ac tortor.'";
-        LinkedList<String> testresult = new LinkedList<>();
-        testresult.add(t1);
-        testresult.add(t2);
-        testresult.add(t3);
-        testresult.add(t4);
-        resultsCountLabel.setText(Utils.getCountText(testresult));
-        String res = Utils.concatLLString(testresult);
-        responseTextArea.setText(res);
-
-        // TODO: display results in GUI
+//        String t1 = "rid: 123456\nDoctor: Angus Reid, Richmond, Sacred Heart Hospital\nAppointment Type: Checkup\nOverall Rating: 3/5\nReview: 'angus was great!'";
+//        String t2 = "rid: 213452\nDoctor: Alfred Wong, Burnaby, Burnaby General Hospital\nAppointment Type: Followup\nOverall Rating: 5/5\nReview: 'Alfred was super helpful!'";
+//        String t3 = "rid: 321039\nDoctor: Janel Kopp, Delta, Delta Hospital\nAppointment Type: Eye Exam\nOverall Rating: 4/5\nReview: 'Could be a bit more personable but knowledgeable!'";
+//        String t4 = "rid: 230129\nDoctor: Jesus Christ, Vancouver, University of British Columbia Hospital\nAppointment Type: Mammogram\nOverall Rating: 1/5\nReview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit sed vulputate mi sit. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Sagittis eu volutpat odio facilisis mauris sit amet. Faucibus nisl tincidunt eget nullam non nisi. Ipsum dolor sit amet consectetur. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Pretium viverra suspendisse potenti nullam ac tortor. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Egestas diam in arcu cursus euismod quis viverra nibh cras. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Sed turpis tincidunt id aliquet. Sit amet massa vitae tortor condimentum lacinia quis vel eros. Leo a diam sollicitudin tempor. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Dignissim diam quis enim lobortis scelerisque fermentum. Viverra suspendisse potenti nullam ac tortor.'";
+//        LinkedList<String> testresult = new LinkedList<>();
+//        testresult.add(t1);
+//        testresult.add(t2);
+//        testresult.add(t3);
+//        testresult.add(t4);
+//        resultsCountLabel.setText(Utils.getCountText(testresult));
+//        String res = Utils.concatLLString(testresult);
+//        responseTextArea.setText(res);
     }
 
-    private void submitEditHandler() {
-        String editReviewID = editReviewField.getText();
-        String updatedReviewText = reviewTextField.getText();
-        int updatedStarRating = starRatingBox.getSelectedIndex();
-
+    private void deleteReviewHandler(){
+        String adminuser = adminUsernameTextField.getText();
+        String adminpass = adminPasswordTextField.getText();
+        String idToDelete = reviewIDToDeleteTextField.getText();
+        WrittenReview wr = new WrittenReview();
+        wr.setReviewerUsername(adminuser);
+        wr.setReviewerPassword(adminpass);
+        wr.setUpdateReviewId(idToDelete);
+        delegate.deleteReview(wr);
     }
+
 
     public static void main(String[] args) {
         Frame frame = new RateMyDocGUI(null);

@@ -99,6 +99,7 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         String adminusername = queryObj.getReviewerUsername();
         String adminpassword = queryObj.getReviewerPassword();
         String idToDelete = queryObj.getUpdateReviewId();
+        
 
         // todo call delete function.
     }
