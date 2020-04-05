@@ -2,13 +2,21 @@ package ui;
 
 public class QueryReview {
     private String doctorName;
-    private String doctorLocation;
     private String doctorSpecialization;
     private String doctorHospital;
     private int onlyDoctorsAboveRating;
+    private int docIdentifier;
 
     public QueryReview() {
 
+    }
+
+    public int getDocIdentifier() {
+        return docIdentifier;
+    }
+
+    public void setDocIdentifier(int docIdentifier) {
+        this.docIdentifier = docIdentifier;
     }
 
     public String getDoctorName() {
@@ -17,14 +25,6 @@ public class QueryReview {
 
     public void setDoctorName(String doctorName) {
         this.doctorName = doctorName;
-    }
-
-    public String getDoctorLocation() {
-        return doctorLocation;
-    }
-
-    public void setDoctorLocation(String doctorLocation) {
-        this.doctorLocation = doctorLocation;
     }
 
     public String getDoctorSpecialization() {

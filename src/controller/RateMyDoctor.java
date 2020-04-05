@@ -5,10 +5,7 @@ import delegates.LoginWindowDelegate;
 import delegates.RMDDelegate;
 import model.DoctorQuerier;
 import model.ReviewModel;
-import ui.LoginWindow;
-import ui.QueryReview;
-import ui.RateMyDocGUI;
-import ui.WrittenReview;
+import ui.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -79,6 +76,11 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         reviewModel.updateReview(rid, username, password,updateText, overallRating);
     }
 
+    /*
+    string linked list structure:
+    "rid: 123456\nName: Angus Reid\nAppointment Type: Checkup\n"
+
+     */
     @Override
     public LinkedList<String> showReview(QueryReview reviewObj) {
         String doctorName = reviewObj.getDoctorName();
