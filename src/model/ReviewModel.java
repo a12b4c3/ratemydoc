@@ -15,7 +15,7 @@ public class ReviewModel {
                              String comment, int rating){
         int num_likes = 0;
         int aid = userName.hashCode() * adate.hashCode();
-        int rid = userName.hashCode() + doctorEmail.hashCode();
+        int rid = Math.abs((userName.hashCode() + doctorEmail.hashCode() + adate.hashCode())) %10000000;
         int init_visiable = 1;
         Date sql_adate = Date.valueOf(adate);
 
@@ -25,7 +25,6 @@ public class ReviewModel {
 
         //Store record of this review
         try{
-
             //Record the reviewContent
             System.out.println("recording the user comment");
             System.out.println("recording information");
