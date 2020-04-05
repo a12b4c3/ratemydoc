@@ -9,7 +9,7 @@ public class DoctorQuerier {
 
     public DoctorQuerier() {}
 
-    public LinkedList<String> runQuery(String name, String location, String spec, String hospital, int rating){
+    public LinkedList<String> runQuery(String name, int identifier, String spec, String hospital, int rating){
         LinkedList<String> result = new LinkedList<String>();
         return result;
     }

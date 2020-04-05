@@ -84,14 +84,14 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     @Override
     public LinkedList<String> showReview(QueryReview reviewObj) {
         String doctorName = reviewObj.getDoctorName();
-        String doctorLocation = reviewObj.getDoctorLocation();
         String doctorSpecialization = reviewObj.getDoctorSpecialization();
         String doctorHospital = reviewObj.getDoctorHospital();
         int onlyDoctorsAboveRating = reviewObj.getOnlyDoctorsAboveRating();
+        int docIdentifier = reviewObj.getDocIdentifier();
 
         DoctorQuerier querier = new DoctorQuerier();
 
-        return querier.runQuery(doctorName, doctorLocation, doctorSpecialization, doctorHospital, onlyDoctorsAboveRating);
+        return querier.runQuery(doctorName, docIdentifier, doctorSpecialization, doctorHospital, onlyDoctorsAboveRating);
     }
 
     @Override
