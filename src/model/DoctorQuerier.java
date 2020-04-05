@@ -135,7 +135,6 @@ public class DoctorQuerier {
             else {
                 finalQueryInput += " ORDER BY demail";
             }
-            //System.out.println(finalQueryInput);
             PreparedStatement finalQuery = this.databaseCon.prepareStatement(finalQueryInput);
 
             if (!name.equals("")) {

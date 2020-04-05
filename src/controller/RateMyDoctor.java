@@ -4,12 +4,11 @@ import database.DatabaseConnectionHandler;
 import delegates.LoginWindowDelegate;
 import delegates.RMDDelegate;
 import model.DoctorQuerier;
+import model.MonitorModel;
 import model.ReviewModel;
 import ui.*;
 
-import javax.swing.*;
 import java.awt.*;
-import java.sql.ResultSet;
 import java.util.LinkedList;
 
 
@@ -97,6 +96,22 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
         
 
         // todo call delete function.
+    }
+
+    @Override
+    public LinkedList<String> monitorReview(WrittenReview queryObj) {
+        String adminusername = queryObj.getReviewerUsername();
+        String adminpassword = queryObj.getReviewerPassword();
+        String idToProcess = queryObj.getUpdateReviewId();
+
+        MonitorModel monitor = new MonitorModel();
+
+        if (!idToProcess.equals("ReviewID to process")) {
+            Integer rid = Integer.parseInt(idToProcess);
+            monitor.createMonitor(adminusername, adminpassword, rid);
+        }
+
+        return monitor.showMonitoredReviews(adminusername, adminpassword);
     }
 
     @Override

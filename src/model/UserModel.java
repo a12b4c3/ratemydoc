@@ -11,14 +11,22 @@ public class UserModel {
     public UserModel() {
     }
 
-    public boolean verifyUserInformation(String username, String pwd) {
+    public boolean verifyUserInformation(String username, String pwd, boolean admin) {
         System.out.println("Verifying user information");
         String pwd_info = "";
 
         //check whether the doctorExist in the database
         try {
+            String stmtQuery = "SELECT pwd from ";
+            if (!admin) {
+                stmtQuery += "ALL_USER";
+            }
+            else {
+                stmtQuery += "Admin";
+            }
+            stmtQuery += " where username =?";
 
-            PreparedStatement stmt = this.databaseCon.prepareStatement("SELECT pwd from ALL_USER where username =?");
+            PreparedStatement stmt = this.databaseCon.prepareStatement(stmtQuery);
 
             System.out.println("Does username and pws match?");
             System.out.println("User name: " + username);

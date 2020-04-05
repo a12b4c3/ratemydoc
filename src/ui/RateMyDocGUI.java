@@ -1,6 +1,5 @@
 package ui;
 
-import javax.management.Query;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -12,7 +11,6 @@ import java.awt.event.FocusEvent;
 import java.util.LinkedList;
 import java.util.Objects;
 
-import database.DatabaseConnectionHandler;
 import delegates.*;
 
 
@@ -46,7 +44,7 @@ public class RateMyDocGUI extends JFrame {
     private JTextArea reviewTextField;
     private JTextField adminUsernameTextField;
     private JTextField adminPasswordTextField;
-    private JTextField reviewIDToDeleteTextField;
+    private JTextField reviewIDToProcessTextField;
     private JButton deleteReviewButton;
     private JButton monitorButton;
     private JLabel StarRatingLabel;
@@ -150,21 +148,21 @@ public class RateMyDocGUI extends JFrame {
                 }
             }
         });
-        reviewIDToDeleteTextField.addFocusListener(new FocusAdapter() {
+        reviewIDToProcessTextField.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
                 if (!adminReviewIdHasValue) {
-                    reviewIDToDeleteTextField.setText("");
+                    reviewIDToProcessTextField.setText("");
                 }
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
-                if (reviewIDToDeleteTextField.getText().equals("")) {
+                if (reviewIDToProcessTextField.getText().equals("")) {
                     adminReviewIdHasValue = false;
-                    reviewIDToDeleteTextField.setText("Review to Delete");
+                    reviewIDToProcessTextField.setText("ReviewID to process");
                 } else {
                     adminReviewIdHasValue = true;
                 }
@@ -273,7 +271,7 @@ public class RateMyDocGUI extends JFrame {
         monitorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                // TODO
+                monitorReviewHandler();
             }
         });
 
@@ -359,12 +357,26 @@ public class RateMyDocGUI extends JFrame {
     private void deleteReviewHandler(){
         String adminuser = adminUsernameTextField.getText();
         String adminpass = adminPasswordTextField.getText();
-        String idToDelete = reviewIDToDeleteTextField.getText();
+        String idToDelete = reviewIDToProcessTextField.getText();
         WrittenReview wr = new WrittenReview();
         wr.setReviewerUsername(adminuser);
         wr.setReviewerPassword(adminpass);
         wr.setUpdateReviewId(idToDelete);
         delegate.deleteReview(wr);
+    }
+
+    private void monitorReviewHandler() {
+        WrittenReview wr = new WrittenReview();
+        String adminUser = adminUsernameTextField.getText();
+        String adminPass = adminPasswordTextField.getText();
+        String idToMonitor = reviewIDToProcessTextField.getText();
+        wr.setReviewerUsername(adminUser);
+        wr.setReviewerPassword(adminPass);
+        wr.setUpdateReviewId(idToMonitor);
+
+        LinkedList<String> results = delegate.monitorReview(wr);
+        resultsCountLabel.setText(Utils.getCountText(results));
+        responseTextArea.setText(Utils.concatLLString(results));
     }
 
     private void countQueryHandler() {
