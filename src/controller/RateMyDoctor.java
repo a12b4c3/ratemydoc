@@ -3,6 +3,7 @@ package controller;
 import database.DatabaseConnectionHandler;
 import delegates.LoginWindowDelegate;
 import delegates.RMDDelegate;
+import model.DoctorQuerier;
 import model.ReviewModel;
 import ui.LoginWindow;
 import ui.QueryReview;
@@ -11,6 +12,8 @@ import ui.WrittenReview;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.ResultSet;
+import java.util.LinkedList;
 
 
 public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
@@ -77,8 +80,16 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     }
 
     @Override
-    public void showReview(QueryReview reviewObj) {
+    public LinkedList<String> showReview(QueryReview reviewObj) {
+        String doctorName = reviewObj.getDoctorName();
+        String doctorLocation = reviewObj.getDoctorLocation();
+        String doctorSpecialization = reviewObj.getDoctorSpecialization();
+        String doctorHospital = reviewObj.getDoctorHospital();
+        int onlyDoctorsAboveRating = reviewObj.getOnlyDoctorsAboveRating();
 
+        DoctorQuerier querier = new DoctorQuerier();
+
+        return querier.runQuery(doctorName, doctorLocation, doctorSpecialization, doctorHospital, onlyDoctorsAboveRating);
     }
 
     @Override

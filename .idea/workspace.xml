@@ -2,7 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5689d1e1-59ed-480f-a386-087a9af36197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/controller/RateMyDoctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/controller/RateMyDoctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/database/DatabaseConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/database/createTables.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/database/insert.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/delegates/LoginWindowDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/delegates/LoginWindowDelegate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/delegates/RMDDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/delegates/RMDDelegate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/model/AppointmentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/model/AppointmentModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/model/DoctorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/model/DoctorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/model/ReviewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/model/ReviewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/model/UserModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/model/UserModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/LoginWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/LoginWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/LoginWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/LoginWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/QueryReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/QueryReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/RateMyDocGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/WrittenReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/WrittenReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ratemydoc/ui/inputException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ratemydoc/ui/inputException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RateMyDoctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RateMyDoctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/delegates/RMDDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/delegates/RMDDelegate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/AdminModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DoctorQuerier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DepartmentModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HospitalModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IsEmployedAtModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MonitorsModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ReviewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReviewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SpecializationModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SpecializesInModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/RateMyDocGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +107,9 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="115" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.RateMyDoctor">
     <configuration name="RateMyDocGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -150,19 +194,21 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="238" key="#Project_Structure/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585351503056" />
-    <state x="280" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585770577421">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="280" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586032214957">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="245" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585694872575" />
+    <state x="280" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1586032214957" />
     <state x="280" y="218" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585770577421" />
     <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser" timestamp="1585772952183">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="289" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585772952183" />
-    <state x="787" y="465" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585767961632">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="787" y="433" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585861574136">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="421" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1585555736156" />
+    <state x="787" y="433" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1585861574136" />
     <state x="787" y="465" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585767961632" />
     <state x="428" y="187" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor" timestamp="1585555730334">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -172,25 +218,29 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1585695505339" />
-    <state width="1877" height="396" key="GridCell.Tab.0.bottom" timestamp="1585773132380">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1586044923629">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1638" height="180" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1585695456390" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1586044923629" />
     <state width="1877" height="396" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585773132380" />
-    <state width="1877" height="396" key="GridCell.Tab.0.center" timestamp="1585773132380">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1586044923629">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1638" height="180" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1585695456388" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1586044923629" />
     <state width="1877" height="396" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585773132380" />
-    <state width="1877" height="396" key="GridCell.Tab.0.left" timestamp="1585773132380">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1586044923629">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1638" height="180" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1585695456387" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1586044923629" />
     <state width="1877" height="396" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585773132380" />
-    <state width="1877" height="396" key="GridCell.Tab.0.right" timestamp="1585773132380">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1586044923629">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1638" height="180" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1585695456389" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1586044923629" />
     <state width="1877" height="396" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585773132380" />
     <state width="1877" height="396" key="GridCell.Tab.1.bottom" timestamp="1585773132380">
       <screen x="0" y="0" width="1920" height="1160" />
@@ -213,10 +263,11 @@
     </state>
     <state width="239" height="457" key="HiddenNamespacesPopup/0.0.1680.1050@0.0.1680.1050" timestamp="1585694737125" />
     <state width="274" height="505" key="HiddenNamespacesPopup/0.0.1920.1160/1920.0.1536.824@0.0.1920.1160" timestamp="1585770212422" />
-    <state x="265" y="129" key="SettingsEditor" timestamp="1585695430434">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="303" y="133" key="SettingsEditor" timestamp="1586032160228">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="265" y="129" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1585695430434" />
+    <state x="303" y="133" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1586032160228" />
     <state x="839" y="374" width="242" height="411" key="UIDesigner.ListEditorDialog" timestamp="1585501913809">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

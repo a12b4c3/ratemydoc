@@ -17,7 +17,7 @@ public class ReviewModel {
         int aid = userName.hashCode() * adate.hashCode();
         int rid = userName.hashCode() + doctorEmail.hashCode();
         int init_visiable = 1;
-        Date sql_adate=Date.valueOf(adate);
+        Date sql_adate = Date.valueOf(adate);
 
         //Store the record of this appointment
         AppointmentModel am = new AppointmentModel();

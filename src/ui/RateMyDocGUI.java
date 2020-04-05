@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.LinkedList;
 import java.util.Objects;
 
 import database.DatabaseConnectionHandler;
@@ -310,8 +311,9 @@ public class RateMyDocGUI extends JFrame {
         query.setDoctorHospital(dochos);
         query.setOnlyDoctorsAboveRating(docrating);
         
-        delegate.showReview(query);
-        // todo submit to delegate
+        LinkedList<String> results = delegate.showReview(query);
+
+        // TODO: display results in GUI
     }
 
     private void submitEditHandler() {
