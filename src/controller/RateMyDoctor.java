@@ -95,13 +95,12 @@ public class RateMyDoctor implements LoginWindowDelegate, RMDDelegate {
     }
 
     @Override
-    public void updateReview(WrittenReview reviewObj) {
+    public void deleteReview(WrittenReview queryObj) {
+        String adminusername = queryObj.getReviewerUsername();
+        String adminpassword = queryObj.getReviewerPassword();
+        String idToDelete = queryObj.getUpdateReviewId();
 
-    }
-
-    @Override
-    public void deleteReview(QueryReview reviewObj) {
-
+        // todo call delete function.
     }
 
     public static void main(String[] args) {
