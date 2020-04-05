@@ -54,7 +54,6 @@ public class RateMyDocGUI extends JFrame {
     private JButton resetWriteButton;
     private JButton resetQueryButton;
     private JLabel writeReviewResponse;
-    private JLabel adminServerResponse;
     private JTextField editReviewField;
     private JLabel aptDateLabel;
     private JTextField aptDateField;
@@ -297,8 +296,6 @@ public class RateMyDocGUI extends JFrame {
 
         writeReviewResponse.setText("rID: " + delegate.insertReview(review));
 
-
-
         } else if (editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, rtext}) && drating != 0) { // edit case
             review.setReviewerUsername(usr);
             review.setReviewerPassword(pwd);
@@ -324,11 +321,9 @@ public class RateMyDocGUI extends JFrame {
         query.setDoctorHospital(dochos);
         query.setOnlyDoctorsAboveRating(docrating);
 
-        if (!docname.equals("") || !docspec.equals("") || !dochos.equals("") || docrating != 0) {
-            LinkedList<String> results = delegate.showReview(query);
-            resultsCountLabel.setText(Utils.getCountText(results));
-            responseTextArea.setText(Utils.concatLLString(results));
-        }
+        LinkedList<String> results = delegate.showReview(query);
+        resultsCountLabel.setText(Utils.getCountText(results));
+        responseTextArea.setText(Utils.concatLLString(results));
     }
 
     private void deleteReviewHandler(){

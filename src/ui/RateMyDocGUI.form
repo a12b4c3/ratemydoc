@@ -142,7 +142,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Returned X results..."/>
+          <text value="Returned X reviews..."/>
         </properties>
       </component>
       <component id="16484" class="javax.swing.JTextField" binding="usernameField">
@@ -236,7 +236,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="ReviewID to delete"/>
+          <text value="ReviewID to process"/>
         </properties>
       </component>
       <component id="bddc5" class="javax.swing.JButton" binding="deleteReviewButton" default-binding="true">
@@ -265,8 +265,8 @@
         </constraints>
         <properties>
           <actionCommand value=""/>
-          <label value="Total Count Reviews"/>
-          <text value="Total Count Reviews"/>
+          <label value="Monitor Review"/>
+          <text value="Monitor Review"/>
         </properties>
       </component>
       <component id="b3e48" class="javax.swing.JLabel" binding="StarRatingLabel">
@@ -306,14 +306,6 @@
         </constraints>
         <properties>
           <text value="Clear Query!"/>
-        </properties>
-      </component>
-      <component id="652a6" class="javax.swing.JLabel" binding="adminServerResponse">
-        <constraints>
-          <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Resp:"/>
         </properties>
       </component>
       <component id="da525" class="javax.swing.JLabel" binding="writeReviewResponse">
@@ -407,6 +399,24 @@
             <item value="Doctor Name"/>
             <item value="Doctor E-mail"/>
           </model>
+        </properties>
+      </component>
+      <component id="3000f" class="javax.swing.JButton">
+        <constraints>
+          <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value=""/>
+          <label value="Total Count Reviews"/>
+          <text value="Total Count Reviews"/>
+        </properties>
+      </component>
+      <component id="1a86b" class="javax.swing.JButton">
+        <constraints>
+          <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Find Most Reviewed Doc!"/>
         </properties>
       </component>
     </children>

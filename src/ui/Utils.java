@@ -57,7 +57,7 @@ public class Utils {
 
     public static String getCountText(LinkedList<String> lls) {
         StringBuilder sb = new StringBuilder("Returned ");
-        String count = (Integer.toString(lls.size())) + " results";
+        String count = (Integer.toString(lls.size())) + " reviews";
         sb.append(count);
         return sb.toString();
     }
