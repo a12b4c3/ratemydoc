@@ -94,7 +94,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Identify doctor by...."/>
+          <text value="Display doctor in results with...."/>
         </properties>
       </component>
       <component id="fa634" class="javax.swing.JLabel" binding="doctorSpecLabel">

@@ -1,19 +1,3 @@
--- drop table ALL_USER;
--- drop table ReviewContent;
--- drop table Monitors;
--- drop table FamilyDoctor;
--- drop table SpecializesIn;
--- drop table IsEmployedAt;
--- drop table HospitalLocation;
--- drop table Admin;
--- drop table ReviewDetails;
--- drop table SpecialistDoctor;
--- drop table Specialization;
--- drop table Department;
--- drop table Hospital;
--- drop table Appointment;
--- drop table Doctor;
--- drop table FAMILYDOCTOR cascade constraints;
 drop table APPOINTMENT cascade constraints;
 drop table ALL_USER cascade constraints;
 drop table ISEMPLOYEDAT cascade constraints;
@@ -29,7 +13,7 @@ drop table REVIEWDETAILS cascade constraints;
 drop table REVIEWCONTENT cascade constraints;
 drop table MONITORS cascade constraints;
 
--- Use char(1) for sex, 'f', 'm' for female and mele identity
+-- Use char(1) for sex, 'f', 'm' for female and male identity
 CREATE TABLE ALL_USER
     (username varchar(20) PRIMARY KEY,
     pwd varchar(20) NOT NULL,
@@ -39,7 +23,6 @@ CREATE TABLE ALL_USER
 
 grant select on ALL_USER to public;
 
--- considering use data instead of varchar(40)
 CREATE TABLE Appointment
      (aid INTEGER PRIMARY KEY,
      Appointment_date date,
@@ -53,9 +36,6 @@ CREATE TABLE Doctor
 
 grant select on Doctor to public;
 
--- I think it's better to delet the review when delete user
--- on delete set dafualt is not supported on oracle
--- changed on delete for user and appointment
 CREATE TABLE ReviewContent
     (username varchar(20) DEFAULT 'someone',
     aid INTEGER DEFAULT -2,
@@ -69,9 +49,6 @@ CREATE TABLE ReviewContent
 
 grant select on ReviewContent to public;
 
--- boolean is not supported in oracle, so I changed visible type to number 
--- 1 -> True, 0 -> false
--- changed on delete for user and appointment
 CREATE TABLE ReviewDetails
     (rid INTEGER PRIMARY KEY,
     username varchar(20) DEFAULT 'someone',
@@ -141,10 +118,7 @@ CREATE TABLE Department
     FOREIGN KEY(hid) REFERENCES Hospital(hid) ON DELETE CASCADE);
 
 grant select on Department to public;
--- changed " FOREIGN KEY (dname) REFERENCES Department(dname) ON DELETE CASCADE,"
--- to " FOREIGN KEY (dname,hid) REFERENCES Department(dname,hid) ON DELETE CASCADE"
--- because dname + hid are the primary key of department
--- we can't just use one of them
+
 CREATE TABLE IsEmployedAt
     (hid INTEGER,
     dname varchar(20),
@@ -155,13 +129,6 @@ CREATE TABLE IsEmployedAt
     FOREIGN KEY (demail) REFERENCES Doctor(demail) ON DELETE CASCADE);
 
 grant select on IsEmployedAt to public;
-
--- CREATE TABLE Department
--- (dname STRING,
---  hid INTEGER,
---  PRIMARY KEY(dname, hid),
---  FOREIGN KEY(hid) REFERENCES Hospital(hid) ON DELETE CASCADE
--- )
 
 CREATE TABLE Admin
     (adid INTEGER PRIMARY KEY,
