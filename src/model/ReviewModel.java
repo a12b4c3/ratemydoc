@@ -15,7 +15,7 @@ public class ReviewModel {
                              String comment, int rating){
         int num_likes = 0;
         int aid = userName.hashCode() * adate.hashCode();
-        int rid = userName.hashCode() + doctorEmail.hashCode();
+        int rid = Math.abs((userName.hashCode() + doctorEmail.hashCode() + adate.hashCode())) %10000000;
         int init_visiable = 1;
         Date sql_adate = Date.valueOf(adate);
 
@@ -25,7 +25,6 @@ public class ReviewModel {
 
         //Store record of this review
         try{
-
             //Record the reviewContent
             System.out.println("recording the user comment");
             System.out.println("recording information");
@@ -82,7 +81,7 @@ public class ReviewModel {
        UserModel um = new UserModel();
        String demail = "";
        int aid = 0;
-       if(um.verifyUserInformation(usrName,password, false)){
+       if(um.verifyUserInformation(usrName,password)){
 
            System.out.println("User and password matched");
 
@@ -125,6 +124,39 @@ public class ReviewModel {
        }
         System.out.println("User and password does not match");
 
+    }
+
+    public void deleteReview(String adminusername, String adminpassword, int ridtodelete) {
+        AdminModel am = new AdminModel();
+        String reviewerUsername = null;
+        String doctorEmail = null;
+        int aid = -1;
+        if (am.verifyUserIsAdmin(adminusername, adminpassword)) {
+            try {
+                PreparedStatement ps = this.databaseCon.prepareStatement("SELECT username, aid, demail FROM REVIEWDETAILS where RID=?");
+                ps.setInt(1,ridtodelete);
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    reviewerUsername = rs.getString("username");
+                    doctorEmail = rs.getString("demail");
+                    aid = rs.getInt("aid");
+                }
+
+                PreparedStatement ps2 = this.databaseCon.prepareStatement("DELETE from REVIEWCONTENT where username = ? and aid = ? and demail = ?");
+                ps2.setString(1, reviewerUsername);
+                ps2.setInt(2, aid);
+                ps2.setString(3, doctorEmail);
+                ps2.executeUpdate();
+                this.databaseCon.commit();
+                ps.close();
+
+            } catch (SQLException e) {
+                System.out.println("Could not delete rid");
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
 }

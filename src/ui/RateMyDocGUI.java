@@ -264,14 +264,14 @@ public class RateMyDocGUI extends JFrame {
         deleteReviewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                deleteReviewHandler();
+                processReviewHandler(true);
             }
         });
 
         monitorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                monitorReviewHandler();
+                processReviewHandler(false);
             }
         });
 
@@ -311,6 +311,7 @@ public class RateMyDocGUI extends JFrame {
         String rtext = reviewTextField.getText().trim();
         int drating = starRatingBox.getSelectedIndex();
         String ridedit = editReviewField.getText().trim();
+
         WrittenReview review = new WrittenReview();
 
         if (!editReviewIdHasValue && Utils.hasNoEmptyStrings(new String[] {usr, pwd, atype, adate, adate, demail, rtext}) && drating != 0) { // submit case
@@ -329,6 +330,7 @@ public class RateMyDocGUI extends JFrame {
             review.setReviewerPassword(pwd);
             review.setReviewText(rtext);
             review.setReviewRating(drating);
+            System.out.println("the rid to edit is: " + ridedit);
             review.setUpdateReviewId(ridedit);
 
 
@@ -354,29 +356,27 @@ public class RateMyDocGUI extends JFrame {
         responseTextArea.setText(Utils.concatLLString(results));
     }
 
-    private void deleteReviewHandler(){
+    private void processReviewHandler(boolean delete){
         String adminuser = adminUsernameTextField.getText();
         String adminpass = adminPasswordTextField.getText();
-        String idToDelete = reviewIDToProcessTextField.getText();
+        String idToProcess = reviewIDToProcessTextField.getText();
         WrittenReview wr = new WrittenReview();
         wr.setReviewerUsername(adminuser);
         wr.setReviewerPassword(adminpass);
-        wr.setUpdateReviewId(idToDelete);
-        delegate.deleteReview(wr);
-    }
+        wr.setUpdateReviewId(idToProcess);
 
-    private void monitorReviewHandler() {
-        WrittenReview wr = new WrittenReview();
-        String adminUser = adminUsernameTextField.getText();
-        String adminPass = adminPasswordTextField.getText();
-        String idToMonitor = reviewIDToProcessTextField.getText();
-        wr.setReviewerUsername(adminUser);
-        wr.setReviewerPassword(adminPass);
-        wr.setUpdateReviewId(idToMonitor);
-
-        LinkedList<String> results = delegate.monitorReview(wr);
-        resultsCountLabel.setText(Utils.getCountText(results));
-        responseTextArea.setText(Utils.concatLLString(results));
+        if (delete) {
+            if (!idToProcess.equals("ReviewID to process")) {
+                // Delete review
+                delegate.deleteReview(wr);
+            }
+        }
+        else {
+            // Show reviews monitored by admin
+            LinkedList<String> results = delegate.monitorReview(wr);
+            resultsCountLabel.setText(Utils.getCountText(results));
+            responseTextArea.setText(Utils.concatLLString(results));
+        }
     }
 
     private void countQueryHandler() {

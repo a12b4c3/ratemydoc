@@ -12,8 +12,8 @@ public class MonitorModel {
     }
 
     public void createMonitor(String usrName, String password, Integer rid){
-        UserModel um = new UserModel();
-        if (um.verifyUserInformation(usrName, password, true)) {
+        AdminModel um = new AdminModel();
+        if (um.verifyUserIsAdmin(usrName, password)) {
             try{
                 int adid = this.getAdminId(usrName);
 
@@ -33,9 +33,9 @@ public class MonitorModel {
 
     public LinkedList<String> showMonitoredReviews(String usrName, String password) {
         LinkedList<String> result = new LinkedList<>();
-        UserModel um = new UserModel();
+        AdminModel um = new AdminModel();
 
-        if (um.verifyUserInformation(usrName, password, true)) {
+        if (um.verifyUserIsAdmin(usrName, password)) {
             try{
                 int adid = this.getAdminId(usrName);
                 PreparedStatement monitorQuery = this.databaseCon.prepareStatement("SELECT rid FROM Monitors WHERE adid =?");
