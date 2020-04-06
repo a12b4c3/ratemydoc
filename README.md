@@ -48,14 +48,16 @@ Lookup a review:
 
 Lookup most reviewed doctor:
 
-	The doctors that have been reviewed by all users in the database will be displayed. This operation will not look at any of the fields as in normal review lookup.
+	The doctors that have been reviewed by all users in the database will be displayed. 
+	This operation will not look at any of the fields as in normal review lookup.
 	User can still choose to display doctor name or email in the results.
 
 
 
 Total review count:
 
-	The total number of reviews stored in the database will be displayed in the review lookup result box. No other user input is required.
+	The total number of reviews stored in the database will be displayed in the review lookup result box.
+	No other user input is required.
 
 
 Delete a review:
@@ -67,8 +69,10 @@ Delete a review:
 
 Monitor a review:
 
-	By default, enter a valid admin username and password to display a list of review IDs that the admin is monitoring in the review lookup result box.
-	If a valid ReviewID is also specified, then the review will be added to the list of monitored reviews of the admin in the database.
+	By default, enter a valid admin username and password to display a list of review IDs 
+	that the admin is monitoring in the review lookup result box.
+	If a valid ReviewID is also specified, then the review will be added to the list of monitored reviews 
+	of the admin in the database.
 	
 
 
