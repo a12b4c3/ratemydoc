@@ -214,7 +214,7 @@ public class RateMyDocGUI extends JFrame {
         });
 
         reviewTextField.getDocument().addDocumentListener(new DocumentListener() {
-            int MAX_REVIEW_CHAR_LENGTH = 250;
+            int MAX_REVIEW_CHAR_LENGTH = 100;
             @Override
             public void changedUpdate(DocumentEvent e) {
                 update();
