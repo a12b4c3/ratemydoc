@@ -132,7 +132,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="Only show doctors above.."/>
+          <text value="With average rating above..."/>
         </properties>
       </component>
       <component id="2b623" class="javax.swing.JLabel" binding="resultsCountLabel">
