@@ -64,8 +64,8 @@
             <item value="Checkup"/>
             <item value="Followup"/>
             <item value="Results Reporting"/>
-            <item value="Sick visit (diagnosis)"/>
-            <item value="Mental Health/Counseling"/>
+            <item value="Diagnosis"/>
+            <item value="Counseling"/>
             <item value="Vaccination"/>
             <item value="Travel Clinic"/>
             <item value="Eye Care"/>
