@@ -143,13 +143,24 @@ public class ReviewModel {
                     aid = rs.getInt("aid");
                 }
 
+                rs.close();
+                ps.close();
+
                 PreparedStatement ps2 = this.databaseCon.prepareStatement("DELETE from REVIEWCONTENT where username = ? and aid = ? and demail = ?");
                 ps2.setString(1, reviewerUsername);
                 ps2.setInt(2, aid);
                 ps2.setString(3, doctorEmail);
                 ps2.executeUpdate();
                 this.databaseCon.commit();
-                ps.close();
+                ps2.close();
+
+                PreparedStatement ps3 = this.databaseCon.prepareStatement("DELETE from REVIEWDETAILS where username = ? and aid = ? and demail = ?");
+                ps3.setString(1, reviewerUsername);
+                ps3.setInt(2, aid);
+                ps3.setString(3, doctorEmail);
+                ps3.executeUpdate();
+                this.databaseCon.commit();
+                ps3.close();
 
             } catch (SQLException e) {
                 System.out.println("Could not delete rid");
